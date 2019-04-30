@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+#vscode settings and mac folder settings
+.vscode/
+settings.json
+.DS_Store
