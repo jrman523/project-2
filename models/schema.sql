@@ -1,5 +1,32 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+CREATE DATABASE lastmingig_db;
+USE lastmingig_db;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+CREATE TABLE employee
+(
+	id int NOT NULL AUTO_INCREMENT,
+	`date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	name varchar(255) NOT NULL,
+    location varchar(255) NOT NULL,
+    craft varchar(255) NOT NULL,
+    sex varchar(255),
+    `img` LONGBLOB,
+    description varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+	available BOOLEAN DEFAULT false,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE employer
+(
+	id int NOT NULL auto_increment,
+    `date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    name varchar(255) NOT NULL,
+    location varchar(255) NOT NULL,
+    `img` LONGBLOB,
+    sex varchar(255),
+    description varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    available BOOLEAN Default false,
+    primary key (id)
+       
+);
