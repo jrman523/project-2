@@ -1,5 +1,5 @@
 
-    <div class="container my-5">
+    <div class="container my-5" style="color:#ffffff;">
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center my-4"><i class="fa fa-clock-o" aria-hidden="true"></i> Last Min Gig Form <i class="fa fa-check-square-o" aria-hidden="true"></i></h1>
@@ -46,11 +46,11 @@
 
                     <!--location city, state-->
                     <div class="form-row">
-                        <div class="col-md-8 mb-3">
+                        <div class="col-md-8 mb-3 my-2">
                             <label for="city"><i class="fa fa-map-marker" aria-hidden="true"></i> City</label>
                             <input type="text" class="form-control" id="city" placeholder="City" required>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-4 mb-3 my-2">
                             <label for="state">State</label>
                             <input type="text" class="form-control" id="state" placeholder="State" required>
                         </div>
@@ -83,38 +83,4 @@
     </div>
 
 
-<script>
-
-var submitForm = function() {
-    //prevent reload
-    event.preventDefault();
-
-    //grab details from form
-    var profile = {
-        name: $("#name").val().trim(),
-        gender: $("#gender").val().trim(),
-        email:  $("#email").val().trim(),
-        city: $("#city").val().trim(),
-        state: $("#state").val().trim(),
-        crafts: $("#craft").val().trim(),
-        availability: $("#availability").val().trim(),
-        description: $("#description").val().trim(),
-    };
-
-    //send profile values to database
-
-
-    //clear form
-    $("#name").val("")
-    $("#email").val("")
-    $("#city").val("")
-    $("#state").val("")
-    $("#craft").val("")
-    $("#availability").val("")
-    $("#description").val("")
-}
-
-//listener for the submit form button being clicked
-$(".form_submit").on("click", submitForm());
-
-</script>
+<script src="/js/contact.js"></script>

@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Aa123456",
+    "password": "letmein",
     "database": "lastmingig_db",
     "host": "localhost",
     "dialect": "mysql"
