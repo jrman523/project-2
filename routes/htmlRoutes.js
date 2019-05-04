@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.listing.findAll({}).then(function(dbExamples) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbExamples
@@ -13,7 +13,7 @@ module.exports = function(app) {
 
   //contact form page
   app.get("/contact/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.listing.findAll({}).then(function(dbExamples) {
       res.render("contact", {
         examples: dbExamples
       });
@@ -22,7 +22,7 @@ module.exports = function(app) {
 
   //search page
   app.get("/search/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.listing.findAll({}).then(function(dbExamples) {
       res.render("search", {
         msg: "Search for talents for your gig!",
         examples: dbExamples
@@ -32,7 +32,7 @@ module.exports = function(app) {
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.listing.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
       res.render("example", {
         example: dbExample
       });
