@@ -15,6 +15,13 @@ module.exports = function (app) {
     });
   });
 
+  // Update a listing
+  app.put("/api/listing/:id", function (req, res) {
+    db.listing.update({ where: { id: req.params.id } }).then(function (dblisting) {
+      res.json(dblisting);
+    });
+  });
+
   // Delete an example by id
   app.delete("/api/listing/:id", function (req, res) {
     db.listing.destroy({ where: { id: req.params.id } }).then(function (dblisting) {
