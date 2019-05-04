@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "1trtAll46",
+    "password": "letmein",
     "database": "lastmingig_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Aa123456",
+    "password": "letmein",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
