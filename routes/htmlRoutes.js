@@ -11,6 +11,25 @@ module.exports = function(app) {
     });
   });
 
+  //contact form page
+  app.get("/contact/", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("contact", {
+        examples: dbExamples
+      });
+    });
+  });
+
+  //search page
+  app.get("/search/", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("search", {
+        msg: "Search for talents for your gig!",
+        examples: dbExamples
+      });
+    });
+  });
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {

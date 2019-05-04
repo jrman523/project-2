@@ -1,0 +1,120 @@
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center my-4"><i class="fa fa-clock-o" aria-hidden="true"></i> Last Min Gig Form <i class="fa fa-check-square-o" aria-hidden="true"></i></h1>
+                <h3 class="text-center my-2">Please fill out this form to post the skills you want to market.</h3>
+                <!--start of form-->
+                <form>
+
+                    <div class="row">
+                        <!--name-->
+                        <div class="col-lg-6 my-2">
+                            <label for="name"><i class="fa fa-user" aria-hidden="true"></i> Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Name" required>
+                        </div>
+
+                        <!--gender-->
+                        <div class="col-lg-6 my-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="male" id="gender" value="male" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    <i class="fa fa-mars" aria-hidden="true"></i> Male
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="female" id="gender" value="female">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    <i class="fa fa-venus" aria-hidden="true"></i> Female
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="noAnswer" id="gender" value="noAnswer">
+                                <label class="form-check-label" for="exampleRadios3">
+                                    Prefer not to answer
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--email-->
+                    <div class="form-group my-2">
+                        <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i> Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@gmail.com" required>
+                    </div>
+
+                    <!--location city, state-->
+                    <div class="form-row">
+                        <div class="col-md-8 mb-3">
+                            <label for="city"><i class="fa fa-map-marker" aria-hidden="true"></i> City</label>
+                            <input type="text" class="form-control" id="city" placeholder="City" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="state">State</label>
+                            <input type="text" class="form-control" id="state" placeholder="State" required>
+                        </div>
+                    </div>
+                  
+                    <!--Craft-->
+                    <div class="form-group my-2">
+                        <label for="craft"><i class="fa fa-paint-brush" aria-hidden="true"></i> Crafts</label>
+                        <textarea class="form-control" id="craft" rows="2" required></textarea>
+                    </div>
+
+                    <!--availability-->
+                    <div class="form-group my-2">
+                        <label for="availability"><i class="fa fa-calendar" aria-hidden="true"></i> Availability</label>
+                        <textarea class="form-control" id="availability" rows="1"></textarea>
+                    </div>
+
+                    <!--Brief description-->
+                    <div class="form-group my-2">
+                        <label for="description"><i class="fa fa-id-card-o" aria-hidden="true"></i> Brief description of yourself</label>
+                        <textarea class="form-control" id="description" rows="5"></textarea>
+                    </div>
+
+                    <button class="btn btn-outline-info form_submit" type="submit">Submit form</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+var submitForm = function() {
+    //prevent reload
+    event.preventDefault();
+
+    //grab details from form
+    var profile = {
+        name: $("#name").val().trim(),
+        gender: $("#gender").val().trim(),
+        email:  $("#email").val().trim(),
+        city: $("#city").val().trim(),
+        state: $("#state").val().trim(),
+        crafts: $("#craft").val().trim(),
+        availability: $("#availability").val().trim(),
+        description: $("#description").val().trim(),
+    };
+
+    //send profile values to database
+
+
+    //clear form
+    $("#name").val("")
+    $("#email").val("")
+    $("#city").val("")
+    $("#state").val("")
+    $("#craft").val("")
+    $("#availability").val("")
+    $("#description").val("")
+}
+
+//listener for the submit form button being clicked
+$(".form_submit").on("click", submitForm());
+
+</script>
