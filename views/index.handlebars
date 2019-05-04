@@ -1,33 +1,61 @@
 <div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+  <!DOCTYPE html>
+  <html>
+  <title>lAST MIN:GIG</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<head>
+  <br>
+  <br>
+
+ <div class="mx-auto" style="width: 100px;">
+      <div class="clock"></div>
+      <br>      
+  </div> 
+
+</head>
+
+
+  <body>
+
+    <div class="container">
+      <p>LAST MIN GIG is for <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+    </div>
+
+    <div class="container">
+     <h1>Finding talent made easy, Finding work made convenient.</h1> 
+    </div>
+     
+
+    <div class="container">
+   
+      <div class="jumbotron">
+        <h1>WHAT ARE YOU LOOKING FOR?</h1>
+
+        <div class="center">
+
+          <div class="row">
+
+            <div class="col">
+              <button type="button" class="btn btn-secondary" href="/">TALENT</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary" href="">WORK</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+  </body>
+
+  </html>
+
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="/js/index.js"></script>
