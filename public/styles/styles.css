@@ -16,19 +16,20 @@ body{
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
 } 
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
   }
   
-  .container {
+  .container-custom {
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
   }
-  .container p {
+  .container-custom p {
 	font-size: 3rem;
 	padding: 0.5rem;
 	font-weight: bold;
@@ -36,20 +37,21 @@ body{
 	text-align: center;
 	overflow: hidden;
   }
-  .container p span.typed-text {
+  .container-custom p span.typed-text {
 	font-weight: normal;
 	color:whitesmoke;
   }
-  .container p span.cursor {
+  .container-custom p span.cursor {
 	display: inline-block;
 	background-color: #ccc;
 	margin-left: 0.1rem;
 	width: 3px;
 	animation: blink 1s infinite;
   }
-  .container p span.cursor.typing {
+  .container-custom p span.cursor.typing {
 	animation: none;
-  }
+	}
+	
   @keyframes blink {
 	0%  { background-color: #ccc; }
 	49% { background-color: #ccc; }
