@@ -1,17 +1,15 @@
-var submitForm = function() {
-  //prevent reload
-  event.preventDefault();
+function submitForm() {
 
   //grab details from form
   var profile = {
-    name: $("#name").val().trim(),
-    gender: $("#gender").val().trim(),
-    email:  $("#email").val().trim(),
-    city: $("#city").val().trim(),
-    state: $("#state").val().trim(),
-    crafts: $("#craft").val().trim(),
-    availability: $("#availability").val().trim(),
-    description: $("#description").val().trim(),
+    name: $("#name").val(),
+    gender: $("#gender").val(),
+    email:  $("#email").val(),
+    city: $("#city").val(),
+    state: $("#state").val(),
+    crafts: $("#craft").val(),
+    availability: $("#availability").val(),
+    description: $("#description").val(),
   };
 
   //send profile values to database
@@ -25,7 +23,15 @@ var submitForm = function() {
   $("#craft").val("")
   $("#availability").val("")
   $("#description").val("")
+
 }
 
 //listener for the submit form button being clicked
-$(".form_submit").on("click", submitForm());
+$("#submit").on("click", function(event){
+    //prevent reload
+    event.preventDefault();
+
+    submitForm();
+
+    $("#myModal").modal("show");
+});

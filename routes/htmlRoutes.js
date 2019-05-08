@@ -13,6 +13,10 @@ module.exports = function (app) {
 
 
   //search page
+  app.get("/search/", function (req, res) {
+    res.render("search");
+  });
+
   // app.get("/search/", function(req, res) {
   //   db.listing.findAll({}).then(function(dbListing) {
   //     res.render("search", {
