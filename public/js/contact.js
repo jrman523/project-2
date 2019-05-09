@@ -1,37 +1,27 @@
-function submitForm() {
+//listener for the submit form button being clicked
+$("#gig-form").on("submit", function(event){
+  //prevent reload
+  event.preventDefault();
+
+  console.log("quotes works");
 
   //grab details from form
   var profile = {
     name: $("#name").val(),
-    gender: $("#gender").val(),
+    gender: $('input[name="radios"]:checked').val(),
     email:  $("#email").val(),
     city: $("#city").val(),
-    state: $("#state").val(),
+    state: $("#stateSearch").val(),
     crafts: $("#craft").val(),
     availability: $("#availability").val(),
     description: $("#description").val(),
   };
 
   //send profile values to database
-
+  console.log(profile);
 
   //clear form
-  $("#name").val("")
-  $("#email").val("")
-  $("#city").val("")
-  $("#state").val("")
-  $("#craft").val("")
-  $("#availability").val("")
-  $("#description").val("")
+  $("#gig-form")[0].reset();
 
-}
-
-//listener for the submit form button being clicked
-$("#submit").on("click", function(event){
-    //prevent reload
-    event.preventDefault();
-
-    submitForm();
-
-    $("#myModal").modal("show");
+  $("#myModal").modal("show");
 });
