@@ -1,9 +1,12 @@
-function submitForm() {
+//listener for the submit form button being clicked
+$("#gig-form").on("submit", function (event) {
+  //prevent reload
+  event.preventDefault();
+
+  var city = $("#city").val();
+  var state = $("#stateSearch").val();
 
   //grab details from form
-  var city = $("#city").val();
-  var state = $("#state").val();
-
   var profile = {
     name: $("#name").val(),
     gender: $("#gender").val(),
@@ -14,6 +17,7 @@ function submitForm() {
     description: $("#description").val(),
   };
 
+
   //send profile values to database
   $.post("/api/listing", profile)
     // on success, run this callback
@@ -22,23 +26,13 @@ function submitForm() {
       console.log(data);
     });
 
+  //send profile values to database
+  console.log(profile);
+
+
   //clear form
-  $("#name").val("");
-  $("#email").val("");
-  $("#city").val("");
-  $("#state").val("");
-  $("#craft").val("");
-  $("#availability").val("");
-  $("#description").val("");
-
-}
-
-//listener for the submit form button being clicked
-$("#submit").on("click", function (event) {
-  //prevent reload
-  event.preventDefault();
-
-  submitForm();
+  $("#gig-form")[0].reset();
 
   $("#myModal").modal("show");
+
 });
