@@ -16,6 +16,8 @@ module.exports = function (app) {
       craft: req.body.craft,
       sex: req.body.sex,
       email: req.body.email,
+      description: req.body.description,
+      img: req.body.img,
       available: req.body.available
     }).then(function (dblisting) {
       res.json(dblisting);
@@ -33,6 +35,8 @@ module.exports = function (app) {
       craft: req.body.craft,
       sex: req.body.sex,
       email: req.body.email,
+      description: req.body.description,
+      img: req.body.img,
       available: req.body.available
     }, {
       where: {
