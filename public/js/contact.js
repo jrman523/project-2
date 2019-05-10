@@ -3,8 +3,6 @@ $("#gig-form").on("submit", function(event){
   //prevent reload
   event.preventDefault();
 
-  console.log("quotes works");
-
   var city = $("#city").val();
   var state = $("#stateSearch").val();
 
