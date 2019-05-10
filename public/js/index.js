@@ -1,13 +1,16 @@
+
+
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-const textArray = ["singers.", "dancers.", "managers finding talent.", "procrastinators.","anyone looking for talent.", "any talented people looking for work." ];
+const textArray = ["singers.", "dancers.", "managers.", "procrastinators.","business owners.", "artist.", "anyone with talent.", "anyone that needs their services."];
 const typingDelay = 200;
 const erasingDelay = 100;
 const newTextDelay = 2000; // Delay between current and next text
 let textArrayIndex = 0;
 let charIndex = 0;
 
+//typing the text
 function type() {
   if (charIndex < textArray[textArrayIndex].length) {
     if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
@@ -20,7 +23,7 @@ function type() {
   	setTimeout(erase, newTextDelay);
   }
 }
-
+//erasing text animation
 function erase() {
 	if (charIndex > 0) {
     if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
@@ -39,3 +42,8 @@ function erase() {
 document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
   if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
+
+
+noStroke();
+
+

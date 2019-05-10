@@ -1,5 +1,6 @@
 //listener for the submit form button being clicked
-$("#gig-form").on("submit", function(event){
+var modalOpen = false;
+$("#gig-form").on("submit", function (event) {
   //prevent reload
   event.preventDefault();
 
@@ -9,21 +10,35 @@ $("#gig-form").on("submit", function(event){
   //grab details from form
   var profile = {
     name: $("#name").val(),
-    gender: $('input[name="radios"]:checked').val(),
-    email:  $("#email").val(),
+    sex: $('input[name="radios"]:checked').val(),
+    email: $("#email").val(),
     location: `${city}, ${state}`,
-    crafts: $("#craft").val(),
-    availability: $("#availability").val(),
+    craft: $("#craft").val(),
+    available: $("#availability").val(),
     description: $("#description").val(),
+    img: $("#image").val()
   };
 
-  
+
   //send profile values to database
-  console.log(profile);
+  $.post("/api/listing", profile)
+    // on success, run this callback
+    .then(function (data) {
+      // log the data we found
+      console.log(data);
+    });
 
 
   //clear form
   $("#gig-form")[0].reset();
 
   $("#myModal").modal("show");
+  modalOpen = true;
+});
+
+$(document).on("click", "body *", ".close", function () {
+  if (modalOpen === true) {
+    $("#myModal").modal("hide");
+    modalOpen = false;
+  }
 });
