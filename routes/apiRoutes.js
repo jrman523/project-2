@@ -4,7 +4,11 @@ module.exports = function (app) {
   // Get all examples
   app.get("/api/listing", function (req, res) {
     db.listing.findAll({}).then(function (dblisting) {
+      console.log("jp",dblisting.data);
       res.json(dblisting);
+      // res.render("search",{
+        // lastmingig: dblisting
+      // });
     });
   });
 

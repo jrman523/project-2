@@ -33,56 +33,24 @@
     </div>
     <br>
 
-    <!--form-->
-    <div class="mx-auto" style="width: 200px;">
+<!--card-->
+<div class="container mx-auto">
+  <div class="row">
+{{#each lastmingig }}
+<div class="col-6">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{this.img}}" alt="Card image cap">
+  <div class="card-body text-dark">
 
-      <section class="search-form">
-        <form action="/api/listing" method="GET" name="search" role="search">
-
-          <p class="inp-wrap search-wrap">
-            <label for="search-field" class="search-label grid-25">Find</label>
-            <input type="search" name="search-term" id="search-field" class="grid-45"
-              placeholder="e.g. dancers, singers, trumpet players" />
-          </p>
-
-          <p class="inp-wrap search-wrap">
-            <label for="search-field" class="search-label grid-25">In</label>
-            <input type="search" name="search-term" id="search-field" class="grid-45"
-              placeholder="e.g. Philadelphia, New York, D.C" />
-          </p>
-
-
-          <p class="inp-wrap search-wrap">
-            <label for="search-field" class="search-label grid-25">Available</label>
-
-            <div class="mx-auto" style="width: 200px;">
-              <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio1">Today</label>
-              </div>
-
-              <br>
-
-              <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio2">Tomorrow</label>
-              </div>
-
-            </div>
-          </p>
-
-          <p class="inp-wrap submit-wrap">
-            <button class="grid-100 btn">
-              <i class="fa fa-search"></i>
-              <h4 style="float:center;width:200px">Search</h4>
-            </button>
-          </p>
-
-        </form>
-      </section>
-
-    </div>
+    <h5 class="card-title">{{this.name}}</h5>
+    <p class="card-text">{{this.description}}</p>
   </div>
+</div>
+</div>
+{{/each}}
+
+  </div>
+</div>
 
 
   <!--logos-->
