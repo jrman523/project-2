@@ -63,12 +63,12 @@ module.exports = function (app) {
       img: req.body.img,
       available: req.body.available
     }, {
-        where: {
-          id: req.params.id
-        }
-      }).then(function (dblisting) {
-        res.json(dblisting);
-      })
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dblisting) {
+      res.json(dblisting);
+    })
       .catch(function (err) {
         res.json(err);
       });
