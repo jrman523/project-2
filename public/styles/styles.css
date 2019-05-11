@@ -513,3 +513,14 @@ a {
 	background-color: #31316e;
 	color: white;
 }
+
+.h1animated {
+	animation-duration: 3s;
+	animation-delay: 2s;
+}
+
+.img {
+	z-index: -1;
+	position: fixed;
+	right: 0;
+}

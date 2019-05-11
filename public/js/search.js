@@ -11,9 +11,16 @@ $("#search").on("click", function (event) {
   var available = $("#date").val();
   $("#results").html("");
 
-  $.get(`/api/listing/${craft}/${location}/${available}`, function (data) {
-    insert(data);
-  });
+  if (craft.length > 0 && location.length > 0 && available.length > 0) {
+    $.get(`/api/listing/${craft}/${location}/${available}`, function (data) {
+      insert(data);
+    });
+  } else {
+    getAll();
+    $("#validate").removeClass("d-none");
+    $("#validate").fadeIn("slow");
+    $("#validate").delay(5000).fadeOut("slow");
+  }
 
   $("#search-form")[0].reset();
 });
