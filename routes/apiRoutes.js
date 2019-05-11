@@ -8,6 +8,30 @@ module.exports = function (app) {
     });
   });
 
+  //Get specific results
+  app.get("/api/listing/:craft/:location/:available", function (req, res) {
+    db.listing.findAll({
+      where: {
+        craft: req.params.craft,
+        location: req.params.location,
+        available: req.params.available
+      }
+    }).then(function (dblisting) {
+      res.json(dblisting);
+    });
+  });
+
+  //single person pull
+  app.get("/api/person/:id", function (req, res) {
+    db.listing.findAll({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dblisting) {
+      res.json(dblisting);
+    });
+  });
+
   // Create a new example
   app.post("/api/listing", function (req, res) {
     db.listing.create({
@@ -39,12 +63,12 @@ module.exports = function (app) {
       img: req.body.img,
       available: req.body.available
     }, {
-      where: {
-        id: req.params.id
-      }
-    }).then(function (dblisting) {
-      res.json(dblisting);
-    })
+        where: {
+          id: req.params.id
+        }
+      }).then(function (dblisting) {
+        res.json(dblisting);
+      })
       .catch(function (err) {
         res.json(err);
       });

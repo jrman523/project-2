@@ -34,78 +34,88 @@
     <br>
 
     <!--form-->
-    <div class="mx-auto" style="width: 200px;">
-
-      <section class="search-form">
-        <form action="/api/listing" method="GET" name="search" role="search">
-
-          <p class="inp-wrap search-wrap">
-            <label for="search-field" class="search-label grid-25">Find</label>
-            <input type="search" name="search-term" id="search-field" class="grid-45"
-              placeholder="e.g. dancers, singers, trumpet players" />
-          </p>
-
-          <p class="inp-wrap search-wrap">
-            <label for="search-field" class="search-label grid-25">In</label>
-            <input type="search" name="search-term" id="search-field" class="grid-45"
-              placeholder="e.g. Philadelphia, New York, D.C" />
-          </p>
-
-
-          <p class="inp-wrap search-wrap">
-            <label for="search-field" class="search-label grid-25">Available</label>
-
-            <div class="mx-auto" style="width: 200px;">
-              <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio1">Today</label>
-              </div>
-
-              <br>
-
-              <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio2">Tomorrow</label>
-              </div>
-
+    <form id="search-form">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xm-12">
+          <div class="input-group mb-3">
+            <input id="craft" type="text" class="form-control" placeholder="Search By Craft..." aria-label="craft"
+              required>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xm-12">
+          <div class="input-group mb-3">
+            <input id="location" type="text" class="form-control" placeholder="Location..." aria-label="location"
+              required>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xm-12">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="date">Date</label>
             </div>
-          </p>
+            <select class="custom-select" id="date">
+              <option value="today">Today</option>
+              <option value="tomorrow">Tomorrow</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xm-12">
+          <button class="btn btn-secondary btn-block" id="search">Search <i class="fas fa-search"></i></button>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-12 col-xm-12">
+          <button class="btn btn-secondary btn-block" id="all">All <i class="fas fa-stream"></i></button>
+        </div>
+      </div>
+    </form>
+    <section class="row" id="results" style="color: black;">
 
-          <p class="inp-wrap submit-wrap">
-            <button class="grid-100 btn">
-              <i class="fa fa-search"></i>
-              <h4 style="float:center;width:200px">Search</h4>
-            </button>
-          </p>
+    </section>
+  </div>
 
-        </form>
-      </section>
-
+  <!-- Modal -->
+  <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="name"></h5>
+          <button type="button" id="close" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3 id="name-body"></h3>
+          <p id="craft-body"></p>
+          <p id="location-body"></p>
+          <p id="description-body"></p>
+          <a id="email-body"></a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="close" class="btn btn-secondary">Close</button>
+        </div>
+      </div>
     </div>
   </div>
 
-
   <!--logos-->
-  <br><br>
   <div class="container">
 
     <div class="row justify-content-md-center">
-      <i style="font-size:55px" class="fa" onclick="window.location.href='https://github.com/jrman523/project-2'">&#xf09b;</i>
+      <a href="https://github.com/jrman523/project-2" target="_blank"><i style="font-size:55px; color:white;"
+          class="fab fa-github"></i></a>
     </div>
-    <br>
 
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-md-center my-3">
       <img src="/img/LOGO.png" class="mx-auto" style="width: 55px;" alt="logo">
     </div>
-    <br>
 
-
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-md-center my-3">
       LASTMINGIG©
     </div>
 
   </div>
-  <br>
 
 
   <p><img src="/img/man.png" class="buliding" style="float:right;width:170px;"></p>
+
+</div>
+<script src="/js/search.js"></script>
